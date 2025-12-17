@@ -227,11 +227,6 @@
                 @endif
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/surat">
-                        <i class="fas fa-envelope"></i> SURAT PENGANTAR
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/agenda">
                         <i class="fas fa-calendar-alt"></i> AGENDA
                     </a>
@@ -251,6 +246,11 @@
                         <i class="fas fa-boxes"></i> INVENTARIS
                     </a>
                 </li>
+                <li class="nav-item me-2">
+    <a class="nav-link text-primary" href="{{ url('/berita-detik') }}">
+        <i class="fas fa-globe"></i> Berita Nasional
+    </a>
+</li>
 
             </ul>
 
