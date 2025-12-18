@@ -121,6 +121,23 @@
 
 <div class="container mt-4">
 
+    {{-- GLOBAL NOTIFICATION --}}
+    @if(session('success'))
+<div class="alert alert-success alert-dismissible fade show auto-alert">
+    <i class="bi bi-check-circle-fill me-2"></i>
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+@endif
+
+@if(session('error'))
+<div class="alert alert-danger alert-dismissible fade show auto-alert">
+    <i class="bi bi-x-circle-fill me-2"></i>
+    {{ session('error') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+@endif
+
     <!-- SECTION TITLE -->
     <div class="section-title mt-4">
         DASHBOARD ADMIN
@@ -558,9 +575,7 @@
 
             <div class="card-body">
 
-                @if(session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                @endif
+
 
                 <table class="table table-hover align-middle">
                     <thead class="table-light">
@@ -689,5 +704,14 @@
     </div>
 
 </div>
+
+<script>
+    setTimeout(() => {
+        document.querySelectorAll('.auto-alert').forEach(alert => {
+            let bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        });
+    }, 4000);
+</script>
 
 @endsection
